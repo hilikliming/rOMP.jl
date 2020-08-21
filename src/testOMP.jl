@@ -1,6 +1,7 @@
 include("rOMP.jl")
 
 using Main.rOMP
+using LinearAlgebra
 
 N=200
 
@@ -17,6 +18,9 @@ for kk in 0:N-1
     end
 end
 
-y= sum(D[:,3:4],dims=2) # so y is the sum of the 3rd and fourth frequency components
+y= sum(D[:,1:2:5],dims=2) # so y is the sum of the 3rd and fourth frequency components
 
-x= rOMP.omp(y,D,2,1e-6)
+@time x= rOMP.omp(y,D,3,1e-6)
+
+err=y-D*x
+display(err'*err)
