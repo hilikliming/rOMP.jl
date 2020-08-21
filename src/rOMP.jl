@@ -1,13 +1,4 @@
 module rOMP
-# This is an implementation of the K-SVD algorithm.
-# The original paper:
-# K-SVD: An Algorithm for Designing Overcomplete Dictionaries
-# for Sparse Representation
-# http://www.cs.technion.ac.il/~freddy/papers/120.pdf
-
-# Variable names are based on the original paper.
-# If you try to read the code, I recommend you to see Figure 2 first.
-#
 export omp
 using Base.Threads, Random, SparseArrays, LinearAlgebra
 
